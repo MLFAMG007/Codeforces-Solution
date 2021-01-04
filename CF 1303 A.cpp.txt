@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using ll = long long;
+using namespace std;
+int main()
+{
+    ll t; cin >> t;
+    ll d = 0, left  = 0,  right = 0 , cnt = 0;
+    string s;
+    while(t--)
+    {
+        cin >> s;
+        d = s.size();
+        d = d - 1;
+        for(ll i = 0; i < s.size() ; i++)
+        {
+            if(s[i] == '1')
+            {
+                left = i;
+                break;
+            }
+        }
+        for(ll j = d; j >= 0; j--)
+        {
+            if(s[j] == '1')
+            {
+                right = j;
+                break;
+            }
+        }
+        for(ll k = left ; k < right ; k++)
+        {
+            if(s[k] == '0')
+            {
+                cnt++;
+            }
+        }
+        cout << cnt << '\n';
+        left  = 0,  right = 0 , cnt = 0;
+
+
+
+    }
+
+}
