@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+int main()
+{
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    ll t; cin >> t;
+    while(t--)
+    {
+        ll n; cin >> n; string s; cin >> s;
+        string ans = "";  ll go = 0;
+        for(ll i = 0; i < n - 6; i++)
+        {
+ 
+ 
+        ll Baal = 0;
+ 
+            string baal = s;
+            if( ( s[i] == 'a' or s[i] == '?') and ( s[i + 1] == 'b' or s[i + 1] == '?')  and ( s[i + 2] == 'a' or s[i + 2] == '?')  and ( s[i + 3] == 'c' or s[i + 3] == '?')  and ( s[i + 4] == 'a' or s[i + 4] == '?')  and ( s[i + 5] == 'b' or s[i + 5] == '?')  and ( s[i + 6] == 'a' or s[i + 6] == '?'))
+            {
+                baal[i] = 'a'; baal[i + 1] = 'b'; baal[i + 2] = 'a'; baal[i + 3] = 'c'; baal[i + 4] = 'a'; baal[i + 5] = 'b'; baal[i + 6] = 'a';
+                for(ll i = 0; i < n - 6; i++)
+                {
+                    if(baal.substr(i , 7) == "abacaba")
+                    {
+                        Baal++;
+                    }
+                }
+                if(Baal == 1)
+                {
+                    go = 1;
+                    ans = baal;
+ 
+                    break;
+                }
+ 
+ 
+            }
+        }
+        if(!go)
+            no;
+        else
+        {
+            yes;
+            for(ll i = 0; i < ans.size(); i++)
+            {
+                if(ans[i] != '?')
+                    cout << ans[i];
+                else
+                    cout << 'z';
+            }
+        }
+        cout << endl;
+    }
+}
