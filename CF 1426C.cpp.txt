@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+int main()
+{
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    ll t; cin >> t;
+    while(t--)
+    {
+        ll n; cin >> n;
+        // baal r question
+        ll baal1 = sqrt(n);
+        ll baal2 = (2 * sqrt(n)) - 1;
+        if(baal1 * baal1 == n)
+        {
+            baal2--;
+        }
+        cout << baal2 << endl;
+
+
+    }
+}
