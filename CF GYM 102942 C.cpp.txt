@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+vector < ll > a;
+int main()
+{
+    
+
+
+    ll t; cin >> t;
+    while(t--)
+    {
+        a.clear();
+        ll n, k; cin >> n >> k;
+        ll ans = 0;
+        for(ll i = 0; i < n; i++)
+        {
+            ll x; cin >> x;
+            if(x >= k)
+            {
+                ans++;
+            }
+            if(x < k)
+            {
+                a.push_back(x);
+            }
+
+        }
+        sort(a.rbegin(), a.rend());
+        ll sz = (ll) a.size();
+        // for(; i<n ; j<n , i+=2 , j+=2){
+        ll i = 0, j = sz - 1;
+        while(true)
+        {
+            if(i == j or i > j)
+            {
+                break;
+            }
+            ll o = a[i] + a[j];
+            if(o < k)
+            {
+                j--;
+            }
+            else if(o >= k)
+            {
+                ans++; i++; j--;
+
+            }
+        }
+
+
+
+       cout << ans << endl;
+        //a.clear();
+
+    }
+
+
+
+
+
+}
