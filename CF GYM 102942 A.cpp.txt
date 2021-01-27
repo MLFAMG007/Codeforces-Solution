@@ -1,0 +1,69 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+int main()
+{
+    
+
+    ll t; cin >> t;
+    while(t--)
+    {
+        ll n; cin >> n; string s; cin >> s;
+        char o = 'E';
+        for(ll i = 0; i < n; i++)
+        {
+
+            if(s[i] == '1')
+            {
+                if(o == 'E')
+                {
+                    o = 'N';
+
+                }
+                else if(o == 'N')
+                {
+                    o = 'W';
+                }
+                else if(o == 'W')
+                {
+                    o = 'S';
+                }
+                else if(o == 'S')
+                {
+                    o = 'E';
+                }
+
+
+            }
+            else if(s[i] == '0')
+            {
+                if(o == 'E')
+                {
+                    o = 'S';
+
+                }
+                else if(o == 'S')
+                {
+                    o = 'W';
+                }
+                else if(o == 'W')
+                {
+                    o = 'N';
+                }
+                else if(o == 'N')
+                {
+                    o = 'E';
+                }
+
+
+            }
+        }
+        cout << o << endl;
+    }
+
+
+
+
+
+}
