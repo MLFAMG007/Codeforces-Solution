@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+int main()
+{
+   
+
+    ll t; cin >> t;
+    while(t--)
+    {
+        ll n; cin >> n; vector < ll > a(n);
+        ll od = 0, ev = 0, ans = -1;
+        for(auto &i : a)
+        {
+            cin >> i;
+            if(i & 1)
+            {
+                od++;
+            }
+            else
+            {
+                ev++;
+            }
+
+        }
+        if(ev == n)
+        {
+            cout << "-1\n";
+        }
+        else
+        {
+            cout << ev  << endl;
+        }
+        a.clear();
+    }
+
+
+
+
+
+}
