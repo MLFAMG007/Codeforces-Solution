@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+int main()
+{
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    ll n , m; cin >> n >> m;
+    map < ll ,ll > mp;
+    for(ll i = 0; i < n; i++)
+    {
+        ll P; cin >> P; mp[P]++;
+    }
+    ll cnt = 0;
+    for(ll i = 0; i < m; i++)
+    {
+        ll op ; cin >> op;
+        ll xx = mp[op];
+        cnt += xx;
+
+    }
+    cout << cnt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
