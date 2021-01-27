@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+#define yes cout << "Yes" << endl
+#define no cout << "No" << endl
+int main()
+{
+    
+
+    ll t; cin >> t;
+    while(t--)
+    {
+        ll a , b; cin >> a >> b;
+        ll d = a + b;
+        ll c = (a ^ b);
+        if( (  c > a or c > b) and ( c == d) )
+            no;
+        else
+            yes;
+
+    }
+
+
+
+
+
+}
+
