@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+ll cnt[1000006];
+int main()
+{
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    ll t; cin >> t;
+    while(t--)
+    {
+        ll n , k; cin >> n >> k; vector < ll > a(n + 2, 0);
+        for(ll i = 0; i < n; i++)
+        {
+            cin >> a[i];
+            cnt[a[i]] = 0;
+        }
+        ll mx = -1 , indx = 0, nite = 0;
+        for(ll i = 0; i < n; i++)
+        {
+            if(cnt[a[i]] == 0)  // newa hoi nai // not visited
+            {
+                nite += a[i];
+                //cnt[a[i]]++;
+
+            }
+            cnt[a[i]]++;
+            while(nite > k)
+            {
+                cnt[a[indx]]--;
+                if(!cnt[a[indx]])
+                    nite -= a[indx];
+                indx++;
+
+
+            }
+            mx = max(mx , (i - indx) + 1);
+
+        }
+        cout << mx << endl;
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
