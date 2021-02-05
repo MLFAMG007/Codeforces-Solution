@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+#define endl "\n"
+ll BAAL ()
+{
+ string s, res = ""; cin >> s;
+        for(ll i = 0; i < s.size(); i++)
+        {
+            if( !res.empty() and  res.back() == 'A' and s[i] == 'B')
+            {
+                res.pop_back();
+            }
+            else if( !res.empty() and res.back() == 'B' and s[i] == 'B')
+            {
+                res.pop_back();
+            }
+            else
+            {
+                res += s[i];
+            }
+        }
+        cout << (ll) res.size() << endl;
+
+}
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+int main()
+{
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    ll t; cin >> t;
+    while(t--)
+    {
+        ll a, b, c; cin >> a >> b >> c; ll o = a + b + c;
+        ll p = min({a, b, c});
+        if(o % 9 == 0 and (o / 9) <= p)
+            yes;
+        else
+            no;
+
+
+
+
+
+    }
+}
+
+
+
+
